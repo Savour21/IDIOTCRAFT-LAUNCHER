@@ -21,7 +21,10 @@ button { color: inherit; border: 0; cursor: pointer; }
 .startup-splash::after { content: ''; position: absolute; inset: 0; opacity: .22; background-image: linear-gradient(rgba(203,166,255,.11) 1px, transparent 1px), linear-gradient(90deg, rgba(203,166,255,.11) 1px, transparent 1px); background-size: 48px 48px; mask-image: linear-gradient(90deg, transparent, black 35%, black 65%, transparent); }
 .startup-panel { position: relative; z-index: 1; display: flex; align-items: center; gap: 20px; width: min(520px, calc(100vw - 40px)); padding: 22px 27px; border: 1px solid rgba(203,166,255,.25); border-radius: 13px 13px 13px 4px; background: rgba(24,20,31,.88); box-shadow: 0 24px 70px rgba(0,0,0,.42); animation: startup-panel-in .85s cubic-bezier(.2,.8,.2,1) both; }
 .startup-logo { width: 72px; height: 72px; display: grid; place-items: center; flex: 0 0 72px; overflow: hidden; border: 1px solid rgba(203,166,255,.35); border-radius: 17px 17px 17px 5px; background: #2d1a3d; animation: startup-logo-in .7s .18s cubic-bezier(.2,.8,.2,1) both; }
-.startup-logo img { width: 100%; height: 100%; padding: 5px; object-fit: contain; }
+.voxel-mark { position: relative; display: block; width: 31px; height: 31px; transform: rotate(30deg) skewY(-30deg) scaleY(.88); border: 1px solid rgba(30,17,18,.6); border-radius: 4px; background: linear-gradient(135deg, #9c6b47 0 49%, #624033 49% 100%); box-shadow: 4px 5px 0 rgba(19,10,18,.4), inset 2px 2px 0 rgba(255,220,133,.22); }
+.voxel-mark::before { content: ''; position: absolute; inset: -1px -1px auto -1px; height: 55%; clip-path: polygon(0 25%, 50% 0, 100% 25%, 50% 50%); border: 1px solid rgba(35,74,40,.8); background: linear-gradient(135deg, #8ddc69, #3f8d4b); }
+.voxel-mark::after { content: ''; position: absolute; right: 5px; bottom: 6px; width: 8px; height: 7px; border-radius: 1px; background: #211820; box-shadow: -6px 5px 0 #211820, 6px 5px 0 #211820; }
+.voxel-mark i { position: absolute; z-index: 1; left: 3px; bottom: 3px; width: 5px; height: 12px; background: rgba(245,177,87,.22); transform: skewY(30deg); }
 .startup-copy { display: grid; gap: 5px; animation: startup-copy-in .7s .24s cubic-bezier(.2,.8,.2,1) both; }
 .startup-kicker, .startup-status { color: var(--faint); font: 10px 'DM Mono', monospace; letter-spacing: .12em; text-transform: uppercase; }
 .startup-copy strong { color: var(--ink); font-size: clamp(18px, 3vw, 26px); letter-spacing: .02em; font-weight: 600; }
@@ -40,7 +43,7 @@ body.ready .startup-splash { opacity: 0; visibility: hidden; pointer-events: non
 .sidebar { width: var(--sidebar); border-right: 1px solid var(--line); padding: 27px 15px 18px; display: flex; flex-direction: column; flex: 0 0 var(--sidebar); background: rgba(15, 19, 16, .76); }
 .brand-lockup { display: flex; align-items: center; gap: 11px; padding: 0 12px 39px; }
 .brand-mark { width: 42px; height: 42px; display: grid; place-items: center; overflow: hidden; background: #2d1a3d; border: 1px solid rgba(203,166,255,.35); color: var(--lime); border-radius: 11px 11px 11px 3px; font-size: 20px; font-weight: 700; }
-.brand-mark img { display: block; width: 100%; height: 100%; padding: 3px; object-fit: contain; object-position: 50% 50%; }
+.brand-mark .voxel-mark { width: 25px; height: 25px; box-shadow: 3px 4px 0 rgba(19,10,18,.36), inset 2px 2px 0 rgba(255,220,133,.22); }
 .brand-lockup strong, .brand-lockup span { display: block; line-height: 1.1; }
 .brand-lockup strong { letter-spacing: -.04em; font-size: 17px; }
 .brand-lockup span { color: var(--muted); font: 10px 'DM Mono', monospace; text-transform: uppercase; letter-spacing: .08em; margin-top: 3px; }

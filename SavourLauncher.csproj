@@ -21,7 +21,6 @@
     <Content Include="index.html" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="styles.css" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="app.js" CopyToOutputDirectory="PreserveNewest" />
-    <Content Include="savour-logo.png" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="launcher.settings.json.example" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="launcher.settings.json" CopyToOutputDirectory="PreserveNewest" Condition="Exists('launcher.settings.json')" />
     <Content Include="launcher.update.json" CopyToOutputDirectory="PreserveNewest" Condition="Exists('launcher.update.json')" />

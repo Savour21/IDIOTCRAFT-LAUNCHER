@@ -17,7 +17,7 @@ dotnet build SavourLauncher.csproj -c Release
 dotnet run --project SavourLauncher.csproj
 ```
 
-The executable hosts the launcher UI locally. The logo file is expected at `savour-logo.png` beside the project files; the UI falls back to the Savour `S` mark until that file is added.
+The executable hosts the launcher UI locally. The interface uses a CSS-rendered voxel block mark, so no external logo image is required.
 
 ### Live update notices
 
