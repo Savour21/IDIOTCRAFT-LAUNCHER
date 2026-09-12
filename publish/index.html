@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#100d18" />
+  <title>IDIOTCORD LAUNCHER</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand-lockup">
+        <div class="brand-mark"><img src="savour-logo.png" alt="IDIOTCORD character logo" /></div>
+        <div>
+          <strong>IDIOTCORD</strong>
+          <span>Launcher</span>
+        </div>
+      </div>
+
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <p class="nav-label">Workspace</p>
+        <button class="nav-item active" data-view="Overview"><i data-lucide="layout-dashboard"></i><span>Overview</span></button>
+        <button class="nav-item" data-view="Instances"><i data-lucide="boxes"></i><span>Instances</span><b>6</b></button>
+        <button class="nav-item" data-view="Discover"><i data-lucide="compass"></i><span>Discover</span></button>
+        <button class="nav-item" data-view="News"><i data-lucide="newspaper"></i><span>News</span><em>2</em></button>
+        <p class="nav-label nav-label-spaced">Manage</p>
+        <button class="nav-item" data-view="Accounts"><i data-lucide="user-round"></i><span>Accounts</span></button>
+        <button class="nav-item" data-view="Settings"><i data-lucide="settings-2"></i><span>Settings</span></button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="storage-meter">
+          <div class="storage-topline"><span>Storage</span><span id="storage-percent">Calculating...</span></div>
+          <div class="meter-track"><span id="storage-meter-fill"></span></div>
+          <p id="storage-detail">Reading available disk space...</p>
+        </div>
+        <button class="user-chip" id="account-button">
+          <div class="avatar">A</div>
+          <div><strong id="account-name">Alex Rivers</strong><span id="account-provider">Microsoft account</span></div>
+          <i data-lucide="more-horizontal"></i>
+        </button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="breadcrumb"><span>IDIOTCORD LAUNCHER</span><i data-lucide="chevron-right"></i><strong id="view-title">Overview</strong></div>
+        <div class="topbar-actions">
+          <label class="search-box"><i data-lucide="search"></i><input id="search-input" type="search" placeholder="Search instances" /><kbd>⌘ K</kbd></label>
+          <button class="icon-button" aria-label="Notifications"><i data-lucide="bell"></i><span class="notification-dot"></span></button>
+          <button class="avatar top-avatar">A</button>
+        </div>
+      </header>
+
+      <div class="content-wrap">
+        <section class="welcome-row">
+          <div>
+            <p class="eyebrow">Friday, September 12, 2026</p>
+            <h1>Welcome back, Alex<span class="accent-dot">.</span></h1>
+            <p class="subheading">Your worlds are ready when you are.</p>
+          </div>
+          <button class="secondary-button" id="add-instance"><i data-lucide="plus"></i>New instance</button>
+        </section>
+
+        <section class="dashboard-grid">
+          <article class="hero-card">
+            <div class="hero-glow"></div>
+            <div class="hero-grid-lines"></div>
+            <div class="hero-content">
+              <div class="status-pill"><span class="status-pulse"></span>Ready to play</div>
+              <p class="eyebrow light">Selected instance</p>
+              <h2 id="selected-name">Create: Horizons</h2>
+              <div class="instance-meta"><span><i data-lucide="box"></i> Minecraft <strong id="selected-version">1.21.1</strong></span><span><i data-lucide="layers-3"></i> Fabric <strong id="selected-loader">0.16.9</strong></span></div>
+              <button class="launch-button" id="launch-button"><i data-lucide="play"></i><span>Launch instance</span></button>
+            </div>
+            <div class="hero-badge"><i data-lucide="sparkles"></i><span>Last played<br /><strong>Yesterday</strong></span></div>
+          </article>
+
+          <aside class="activity-panel">
+            <div class="panel-heading"><div><p class="eyebrow">Your activity</p><h3>At a glance</h3></div><button class="icon-button small" aria-label="More activity options"><i data-lucide="more-horizontal"></i></button></div>
+            <div class="stat-list">
+              <div class="stat-row"><div class="stat-icon green"><i data-lucide="clock-3"></i></div><div><span>Play time this week</span><strong id="play-time-stat">0h 00m</strong></div><b class="trend" id="play-time-trend">Live</b></div>
+              <div class="stat-row"><div class="stat-icon orange"><i data-lucide="blocks"></i></div><div><span>Installed mods</span><strong id="mods-stat">0 mods</strong></div><b class="trend neutral" id="mods-trend">From profiles</b></div>
+              <div class="stat-row"><div class="stat-icon blue"><i data-lucide="hard-drive-download"></i></div><div><span>Downloads this month</span><strong id="downloads-stat">0 B</strong></div><b class="trend" id="downloads-trend">Live</b></div>
+            </div>
+            <div class="tip-card"><i data-lucide="lightbulb"></i><p><strong>Quick tip</strong><br />Keep your instances separate to make experimenting easier.</p></div>
+          </aside>
+        </section>
+
+        <section class="instances-section">
+          <div class="section-heading"><div><p class="eyebrow">Your library</p><h2>Recent instances</h2></div><button class="text-button" id="view-all">View all <i data-lucide="arrow-up-right"></i></button></div>
+          <div class="instance-grid" id="instance-grid">
+            <button class="instance-card selected" data-name="Create: Horizons" data-version="1.21.1" data-loader="0.16.9" data-color="mint"><span class="instance-art art-mint"><i data-lucide="mountain"></i></span><span class="instance-card-info"><strong>Create: Horizons</strong><span>1.21.1 · Fabric</span></span><span class="card-menu"><i data-lucide="more-horizontal"></i></span><span class="play-indicator"><i data-lucide="play"></i></span></button>
+            <button class="instance-card" data-name="Cottage Core" data-version="1.20.4" data-loader="0.15.11" data-color="peach"><span class="instance-art art-peach"><i data-lucide="flower-2"></i></span><span class="instance-card-info"><strong>Cottage Core</strong><span>1.20.4 · Fabric</span></span><span class="card-menu"><i data-lucide="more-horizontal"></i></span><span class="play-indicator"><i data-lucide="play"></i></span></button>
+            <button class="instance-card" data-name="Vault Hunters" data-version="1.18.2" data-loader="40.2.17" data-color="violet"><span class="instance-art art-violet"><i data-lucide="gem"></i></span><span class="instance-card-info"><strong>Vault Hunters</strong><span>1.18.2 · Forge</span></span><span class="card-menu"><i data-lucide="more-horizontal"></i></span><span class="play-indicator"><i data-lucide="play"></i></span></button>
+            <button class="instance-card" data-name="Vanilla Survival" data-version="1.21.1" data-loader="Vanilla" data-color="sky"><span class="instance-art art-sky"><i data-lucide="tree-pine"></i></span><span class="instance-card-info"><strong>Vanilla Survival</strong><span>1.21.1 · Vanilla</span></span><span class="card-menu"><i data-lucide="more-horizontal"></i></span><span class="play-indicator"><i data-lucide="play"></i></span></button>
+          </div>
+        </section>
+
+        <section class="bottom-row">
+          <div class="release-note" id="release-note"><div class="release-icon"><i data-lucide="megaphone"></i></div><div><p class="eyebrow">IDIOTCORD release notes</p><h3 id="release-title">Version 0.1.0</h3><p id="release-copy">Initial launcher shell, native host, account flow, and vanilla installation foundation.</p></div><a class="icon-button" id="download-button" href="#" target="_blank" aria-label="Download latest launcher"><i data-lucide="download"></i></a></div>
+          <div class="server-status"><span class="status-pulse"></span><div><strong>All systems operational</strong><span>Auth · Mod downloads · Skins</span></div><i data-lucide="check-circle-2"></i></div>
+        </section>
+      </div>
+      <section class="dynamic-view" id="dynamic-view" hidden></section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status"><i data-lucide="check-circle-2"></i><span>Instance launched successfully</span></div>
+  <div class="modal-backdrop" id="modal-backdrop"><div class="modal"><button class="modal-close" id="modal-close" aria-label="Close"><i data-lucide="x"></i></button><div class="modal-symbol"><i data-lucide="plus"></i></div><p class="eyebrow">New instance</p><h2>Create a new world</h2><p class="modal-copy">Choose a live Mojang version manifest entry for this isolated instance.</p><label>Instance name<input id="new-instance-name" value="My new world" /></label><label class="modal-field">Minecraft version<select id="minecraft-version"><option value="1.21.1">Loading versions...</option></select></label><button class="launch-button modal-submit" id="create-instance">Create and install vanilla <i data-lucide="arrow-right"></i></button></div></div>
+  <script src="app.js"></script>
+</body>
+</html>

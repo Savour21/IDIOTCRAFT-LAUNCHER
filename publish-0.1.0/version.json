@@ -1,0 +1,12 @@
+{
+  "version": "0.1.0",
+  "channel": "stable",
+  "releaseDate": "2026-09-12",
+  "downloadUrl": "",
+  "notes": [
+    "Initial IDIOTCORD LAUNCHER release.",
+    "Windows WebView2 desktop host.",
+    "Microsoft account flow is optional and requires your own approved client registration.",
+    "Vanilla Minecraft installation foundation with Mojang metadata and verified downloads."
+  ]
+}

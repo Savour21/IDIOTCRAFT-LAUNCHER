@@ -1,0 +1,14 @@
+{
+  "version": "0.1.1",
+  "updateType": "patch",
+  "downloadUrl": "",
+  "notes": [
+    "Initial IDIOTCORD LAUNCHER release.",
+    "Windows WebView2 desktop host.",
+    "Optional Microsoft account setup.",
+    "Mojang version discovery and verified vanilla installation foundation.",
+    "Updated Microsoft authentication configuration and synchronized build settings.",
+    "Fixed full Savour PNG logo rendering and added local update metadata fallback.",
+    "Expanded in-app release notes to include the latest launcher changes."
+  ]
+}

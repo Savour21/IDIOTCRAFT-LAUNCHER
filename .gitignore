@@ -1,0 +1,31 @@
+# .NET build output
+bin/
+obj/
+
+# Local Java runtime
+oracleJdk-*/
+
+# WebView2 browser cache and generated executable data
+*.exe.WebView2/
+IDIOTCORD LAUNCHER NEW.exe
+publish/*.exe
+publish-0.1.0/*.exe
+
+# Local launcher account and runtime data
+account.json
+**/account.json
+instances/
+cache/
+
+# Prism fork build and package output
+prism-fork/build-*/
+prism-fork/vcpkg_installed/
+prism-fork/$install*/
+prism-fork/$ecmInstall/
+prism-fork/$qrInstall/
+
+# IDE and OS files
+.vs/
+.vscode/*.log
+.DS_Store
+Thumbs.db

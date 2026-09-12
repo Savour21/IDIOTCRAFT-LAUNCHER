@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <AssemblyName>IDIOTCORDLauncher</AssemblyName>
+    <RootNamespace>IDIOTCORDLauncher</RootNamespace>
+    <Version>0.1.0</Version>
+    <AssemblyVersion>0.1.0.0</AssemblyVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="prism-fork/**/*.cs" />
+    <EmbeddedResource Remove="prism-fork/**/*" />
+    <None Remove="prism-fork/**/*" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2792.45" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="index.html" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="styles.css" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="app.js" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="savour-logo.png" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="launcher.settings.json.example" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="launcher.settings.json" CopyToOutputDirectory="PreserveNewest" Condition="Exists('launcher.settings.json')" />
+    <Content Include="launcher.update.json" CopyToOutputDirectory="PreserveNewest" Condition="Exists('launcher.update.json')" />
+    <Content Include="version.json" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="launcher.update.json.example" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="CHANGELOG.md" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="RELEASE_AND_DISCORD.md" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>
