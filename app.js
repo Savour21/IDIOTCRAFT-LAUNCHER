@@ -11,14 +11,28 @@ let accountState = { status: 'signed-out', name: '', message: 'Sign in to connec
 const appVersion = '0.1.2';
 let requiredUpdate = false;
 
+function sendWindowCommand(type) {
+  if (window.chrome?.webview?.postMessage) {
+    window.chrome.webview.postMessage({ type });
+  }
+}
+
 document.querySelector('.topbar').addEventListener('mousedown', (event) => {
-  if (!event.target.closest('button, input, a')) nativeCall('beginWindowDrag');
+  if (!event.target.closest('button, input, a')) sendWindowCommand('begin-window-drag');
 });
-document.querySelector('#window-minimize').addEventListener('click', () => nativeCall('minimizeWindow'));
-document.querySelector('#window-maximize').addEventListener('click', () => nativeCall('toggleMaximizeWindow'));
+document.querySelector('#window-minimize').addEventListener('click', () => sendWindowCommand('minimize-window'));
+document.querySelector('#window-maximize').addEventListener('click', () => sendWindowCommand('toggle-maximize-window'));
 document.querySelector('#window-close').addEventListener('click', () => document.querySelector('#close-modal-backdrop').classList.add('open'));
 document.querySelector('#cancel-close').addEventListener('click', () => document.querySelector('#close-modal-backdrop').classList.remove('open'));
-document.querySelector('#confirm-close').addEventListener('click', () => nativeCall('closeWindow'));
+document.querySelector('#confirm-close').addEventListener('click', () => sendWindowCommand('close-window'));
+document.querySelector('#notification-button').addEventListener('click', () => {
+  const updateCount = document.querySelector('[data-view="News"] em')?.textContent;
+  if (updateCount === '1') {
+    document.querySelector('[data-view="News"]').click();
+    return;
+  }
+  window.setLaunchState('info', 'No new notifications.');
+});
 
 window.addEventListener('load', () => {
   window.setTimeout(() => document.body.classList.add('ready'), 1600);

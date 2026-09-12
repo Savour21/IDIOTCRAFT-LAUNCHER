@@ -103,9 +103,23 @@ public sealed class LauncherWindow : Form
         browser.CoreWebView2.Settings.AreDefaultContextMenusEnabled = false;
         browser.CoreWebView2.Settings.AreDevToolsEnabled = false;
         browser.CoreWebView2.AddHostObjectToScript("bridge", bridge);
+        browser.CoreWebView2.WebMessageReceived += HandleWebMessage;
         browser.CoreWebView2.NavigationStarting += HandleNavigation;
         browser.CoreWebView2.NavigationCompleted += HandleDocumentCompleted;
         browser.CoreWebView2.Navigate(new Uri(Path.Combine(AppContext.BaseDirectory, "index.html")).AbsoluteUri);
+    }
+
+    private void HandleWebMessage(object? sender, CoreWebView2WebMessageReceivedEventArgs e)
+    {
+        using var message = JsonDocument.Parse(e.WebMessageAsJson);
+        if (!message.RootElement.TryGetProperty("type", out var type)) return;
+        switch (type.GetString())
+        {
+            case "begin-window-drag": BeginWindowDrag(); break;
+            case "minimize-window": MinimizeWindow(); break;
+            case "toggle-maximize-window": ToggleMaximizeWindow(); break;
+            case "close-window": CloseWindow(); break;
+        }
     }
 
     private async void HandleDocumentCompleted(object? sender, CoreWebView2NavigationCompletedEventArgs e)
