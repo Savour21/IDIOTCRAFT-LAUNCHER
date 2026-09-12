@@ -2,6 +2,12 @@
 
 ## 0.1.2 - 2026-09-12
 
+- Added the animated startup splash and longer loading handoff.
+- Replaced the image logo with a clean CSS taskbar-style mark.
+- Added the newest-launcher shortcut for opening the latest build output.
+
+## 0.1.1 - 2026-09-12
+
 - Added a startup update window with Update now and Continue options.
 - Added patch, minor, major, and required update severity handling.
 - Required updates disable launching until the release is installed.
