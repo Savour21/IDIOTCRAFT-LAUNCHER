@@ -38,7 +38,7 @@ public sealed class LauncherBridge(LauncherWindow window)
 
 public sealed class LauncherWindow : Form
 {
-    private const string MicrosoftAuthority = "https://login.microsoftonline.com/consumers/oauth2/v2.0";
+    private const string MicrosoftAuthority = "https://login.microsoftonline.com/common/oauth2/v2.0";
     private static readonly HttpClient Http = new();
     private readonly LauncherBridge bridge;
     private readonly WebView2 browser = new()
