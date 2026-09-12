@@ -212,7 +212,7 @@ public sealed class LauncherWindow : Form
             Query = FormEncode(new Dictionary<string, string>
             {
                 ["client_id"] = settings.ClientId, ["response_type"] = "code", ["redirect_uri"] = redirectUri,
-                ["response_mode"] = "query", ["scope"] = "XboxLive.signin offline_access", ["state"] = state,
+                ["response_mode"] = "query", ["scope"] = "XboxLive.SignIn XboxLive.offline_access", ["state"] = state,
                 ["code_challenge"] = Base64Url(SHA256.HashData(Encoding.ASCII.GetBytes(verifier))), ["code_challenge_method"] = "S256", ["prompt"] = "select_account"
             })
         }.Uri;
@@ -231,7 +231,7 @@ public sealed class LauncherWindow : Form
         {
             ["client_id"] = settings.ClientId, ["grant_type"] = "authorization_code", ["code"] = code,
             ["redirect_uri"] = redirectUri, ["code_verifier"] = verifier,
-            ["scope"] = "XboxLive.signin offline_access"
+            ["scope"] = "XboxLive.SignIn XboxLive.offline_access"
         });
         var minecraft = await CompleteMinecraftLoginAsync(token.AccessToken);
         return minecraft with { RefreshToken = token.RefreshToken };
@@ -239,7 +239,7 @@ public sealed class LauncherWindow : Form
 
     private async Task<MicrosoftToken> RefreshMicrosoftTokenAsync(string refreshToken) => await RequestMicrosoftTokenAsync(new Dictionary<string, string>
     {
-        ["client_id"] = settings.ClientId, ["grant_type"] = "refresh_token", ["refresh_token"] = refreshToken, ["scope"] = "XboxLive.signin offline_access"
+        ["client_id"] = settings.ClientId, ["grant_type"] = "refresh_token", ["refresh_token"] = refreshToken, ["scope"] = "XboxLive.SignIn XboxLive.offline_access"
     });
 
     private static async Task<MicrosoftToken> RequestMicrosoftTokenAsync(Dictionary<string, string> values)
