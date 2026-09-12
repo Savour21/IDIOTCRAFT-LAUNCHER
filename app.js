@@ -11,6 +11,10 @@ let accountState = { status: 'signed-out', name: '', message: 'Sign in to connec
 const appVersion = '0.1.2';
 let requiredUpdate = false;
 
+window.addEventListener('load', () => {
+  window.setTimeout(() => document.body.classList.add('ready'), 850);
+});
+
 function nativeBridge() {
   return window.chrome?.webview?.hostObjects?.sync?.bridge || window.external;
 }
