@@ -1,8 +1,0 @@
-IDIOTCORD LAUNCHER v0.1.0 is available!
-
-Download the Windows launcher:
-[PASTE YOUR GITHUB RELEASE LINK HERE]
-
-This release includes the IDIOTCORD desktop launcher, optional Microsoft account setup, Mojang version discovery, and the vanilla installation foundation.
-
-Please install Microsoft Edge WebView2 if Windows asks for it.

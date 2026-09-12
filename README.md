@@ -4,11 +4,11 @@ IDIOTCORD LAUNCHER is a Windows desktop launcher shell for Minecraft instances.
 
 ## Run the current app
 
-Current version: **0.1.0**. See [CHANGELOG.md](CHANGELOG.md) for the complete history.
+Current version: **0.1.1**. See [CHANGELOG.md](CHANGELOG.md) for the complete history.
 
-For friends, publish the self-contained `IDIOTCORD LAUNCHER.exe` as a GitHub
-Release asset or attach it to a Discord announcement. Do not upload secrets or
-`launcher.settings.json`; users should create their own configuration.
+Build release installers locally or attach them to a GitHub Release. Do not
+upload secrets or `launcher.settings.json`; users should create their own
+configuration from `launcher.settings.json.example`.
 
 Open `index.html` in a browser for the UI prototype, or build the Windows executable:
 
@@ -21,9 +21,11 @@ The executable hosts the launcher UI locally. The logo file is expected at `savo
 
 ### Live update notices
 
-Set `updateFeedUrl` in `launcher.settings.json` to a raw HTTPS URL serving the
-same shape as `launcher.update.json.example`. The launcher compares semantic
-versions and shows a download button only when the feed reports a newer version.
+Set `updateFeedUrl` in `launcher.settings.json` to a public raw HTTPS URL serving
+the same shape as `launcher.update.json.example`. The launcher compares
+semantic `major.minor.patch` versions and shows a startup decision prompt when
+the feed reports a newer version. Use `updateType` values `patch`, `minor`, or
+`major` for optional updates, or `required` to block launching until updated.
 
 ## Production integrations still required
 
