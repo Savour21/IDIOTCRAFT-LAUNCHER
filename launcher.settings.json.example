@@ -1,5 +1,5 @@
 {
   "clientId": "PASTE-YOUR-MICROSOFT-ENTRA-APPLICATION-CLIENT-ID-HERE",
-  "updateFeedUrl": "",
-  "downloadUrl": ""
+  "updateFeedUrl": "https://raw.githubusercontent.com/Savour21/IDIOTCRAFT-LAUNCHER/main/launcher.update.json",
+  "downloadUrl": "https://github.com/Savour21/IDIOTCRAFT-LAUNCHER/releases/latest"
 }
