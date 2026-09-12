@@ -12,7 +12,7 @@ const appVersion = '0.1.2';
 let requiredUpdate = false;
 
 window.addEventListener('load', () => {
-  window.setTimeout(() => document.body.classList.add('ready'), 850);
+  window.setTimeout(() => document.body.classList.add('ready'), 1600);
 });
 
 function nativeBridge() {
