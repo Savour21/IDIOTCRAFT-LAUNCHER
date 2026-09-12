@@ -1,5 +1,5 @@
 {
-  "version": "0.1.1",
+  "version": "0.1.2",
   "channel": "stable",
   "releaseDate": "2026-09-12",
   "downloadUrl": "",
@@ -9,6 +9,8 @@
     "Microsoft account flow is optional and requires your own approved client registration.",
     "Vanilla Minecraft installation foundation with Mojang metadata and verified downloads.",
     "Updated Microsoft authentication configuration and synchronized build settings.",
-    "Fixed full Savour PNG logo rendering and added local update metadata fallback."
+    "Fixed full Savour PNG logo rendering and added local update metadata fallback.",
+    "Added startup update prompts with optional and required update handling.",
+    "Added public GitHub feed configuration and automated build backups."
   ]
 }

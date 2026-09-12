@@ -4,7 +4,7 @@ IDIOTCORD LAUNCHER is a Windows desktop launcher shell for Minecraft instances.
 
 ## Run the current app
 
-Current version: **0.1.1**. See [CHANGELOG.md](CHANGELOG.md) for the complete history.
+Current version: **0.1.2**. See [CHANGELOG.md](CHANGELOG.md) for the complete history.
 
 Build release installers locally or attach them to a GitHub Release. Do not
 upload secrets or `launcher.settings.json`; users should create their own

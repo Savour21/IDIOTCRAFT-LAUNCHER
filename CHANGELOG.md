@@ -1,5 +1,13 @@
 # IDIOTCORD LAUNCHER changelog
 
+## 0.1.2 - 2026-09-12
+
+- Added a startup update window with Update now and Continue options.
+- Added patch, minor, major, and required update severity handling.
+- Required updates disable launching until the release is installed.
+- Connected the public GitHub update feed and release destination.
+- Added an automated Windows build artifact for every GitHub push.
+
 ## 0.1.0 - 2026-09-12
 
 - Rebranded the launcher to IDIOTCORD LAUNCHER.

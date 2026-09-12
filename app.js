@@ -8,7 +8,7 @@ const toast = document.querySelector('#toast');
 const stats = JSON.parse(localStorage.getItem('idiotcord-stats') || '{"minutes":0,"mods":0,"downloads":0}');
 let nativeStorageReported = false;
 let accountState = { status: 'signed-out', name: '', message: 'Sign in to connect your Minecraft account.' };
-const appVersion = '0.1.0';
+const appVersion = '0.1.2';
 let requiredUpdate = false;
 
 function nativeBridge() {

@@ -1,5 +1,5 @@
 {
-  "version": "0.1.1",
+  "version": "0.1.2",
   "updateType": "patch",
   "downloadUrl": "https://github.com/Savour21/IDIOTCRAFT-LAUNCHER/releases/latest",
   "notes": [
@@ -9,6 +9,8 @@
     "Mojang version discovery and verified vanilla installation foundation.",
     "Updated Microsoft authentication configuration and synchronized build settings.",
     "Fixed full Savour PNG logo rendering and added local update metadata fallback.",
-    "Expanded in-app release notes to include the latest launcher changes."
+    "Expanded in-app release notes to include the latest launcher changes.",
+    "Added startup update prompts with optional and required update handling.",
+    "Added public GitHub feed configuration and automated build backups."
   ]
 }
