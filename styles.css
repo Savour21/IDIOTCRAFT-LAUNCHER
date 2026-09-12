@@ -92,7 +92,8 @@ body.ready .startup-splash { opacity: 0; visibility: hidden; pointer-events: non
 .release-note a.icon-button { text-decoration: none; }
 .release-note a.icon-button.download-ready { color: var(--lime); background: rgba(203,166,255,.12); }
 .icon-button svg { width: 17px; }
-.notification-dot { position: absolute; top: 6px; right: 6px; width: 5px; height: 5px; background: var(--orange); border-radius: 50%; }
+.notification-dot { display: none; position: absolute; top: 6px; right: 6px; width: 5px; height: 5px; background: var(--orange); border-radius: 50%; }
+.icon-button.has-notifications .notification-dot { display: block; }
 .top-avatar { border: 0; width: 30px; height: 30px; font-size: 12px; }
 .content-wrap { max-width: 1440px; padding: 45px clamp(25px, 4vw, 58px) 46px; margin: auto; }
 .welcome-row, .section-heading { display: flex; justify-content: space-between; align-items: end; gap: 20px; }

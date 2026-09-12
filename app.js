@@ -127,6 +127,7 @@ window.setUpdateNotice = (status, version, downloadUrl, notes, updateType = 'pat
     button.href = downloadUrl || '#';
     button.classList.add('download-ready');
     document.querySelector('[data-view="News"] em').textContent = '1';
+    document.querySelector('#notification-button').classList.add('has-notifications');
     requiredUpdate = updateType === 'required';
     launchButton.disabled = requiredUpdate;
     document.querySelector('#update-modal-title').textContent = requiredUpdate ? 'Update required to continue' : 'A new version is available';
@@ -145,6 +146,7 @@ window.setUpdateNotice = (status, version, downloadUrl, notes, updateType = 'pat
     button.classList.remove('download-ready');
     requiredUpdate = false;
     launchButton.disabled = false;
+    document.querySelector('#notification-button').classList.remove('has-notifications');
   }
 };
 
