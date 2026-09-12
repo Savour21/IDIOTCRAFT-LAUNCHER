@@ -64,6 +64,11 @@ public sealed class LauncherWindow : Form
         StartPosition = FormStartPosition.CenterScreen;
         BackColor = Color.FromArgb(16, 13, 24);
         Controls.Add(browser);
+        FormClosed += (_, _) =>
+        {
+            browser.Dispose();
+            Application.ExitThread();
+        };
         Shown += async (_, _) => await InitializeBrowserAsync();
     }
 
@@ -76,7 +81,12 @@ public sealed class LauncherWindow : Form
 
     public void MinimizeWindow() => WindowState = FormWindowState.Minimized;
     public void ToggleMaximizeWindow() => WindowState = WindowState == FormWindowState.Maximized ? FormWindowState.Normal : FormWindowState.Maximized;
-    public void CloseWindow() => Close();
+    public void CloseWindow()
+    {
+        if (IsDisposed) return;
+        if (InvokeRequired) { BeginInvoke(CloseWindow); return; }
+        Close();
+    }
 
     [DllImport("user32.dll")]
     private static extern bool ReleaseCapture();

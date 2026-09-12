@@ -16,7 +16,9 @@ document.querySelector('.topbar').addEventListener('mousedown', (event) => {
 });
 document.querySelector('#window-minimize').addEventListener('click', () => nativeCall('minimizeWindow'));
 document.querySelector('#window-maximize').addEventListener('click', () => nativeCall('toggleMaximizeWindow'));
-document.querySelector('#window-close').addEventListener('click', () => nativeCall('closeWindow'));
+document.querySelector('#window-close').addEventListener('click', () => document.querySelector('#close-modal-backdrop').classList.add('open'));
+document.querySelector('#cancel-close').addEventListener('click', () => document.querySelector('#close-modal-backdrop').classList.remove('open'));
+document.querySelector('#confirm-close').addEventListener('click', () => nativeCall('closeWindow'));
 
 window.addEventListener('load', () => {
   window.setTimeout(() => document.body.classList.add('ready'), 1600);
