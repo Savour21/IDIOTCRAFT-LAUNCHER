@@ -17,6 +17,9 @@ dotnet build SavourLauncher.csproj -c Release
 dotnet run --project SavourLauncher.csproj
 ```
 
+After building, double-click `Launch IDIOTCORD Launcher.cmd` to open the newest
+launcher executable found in the build output.
+
 The executable hosts the launcher UI locally. The interface uses a CSS-rendered voxel block mark, so no external logo image is required.
 
 ### Live update notices
