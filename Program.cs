@@ -24,6 +24,10 @@ internal static class Program
 [ComVisible(true)]
 public sealed class LauncherBridge(LauncherWindow window)
 {
+    public void beginWindowDrag() => window.BeginWindowDrag();
+    public void minimizeWindow() => window.MinimizeWindow();
+    public void toggleMaximizeWindow() => window.ToggleMaximizeWindow();
+    public void closeWindow() => window.CloseWindow();
     public void microsoftLogin() => window.BeginMicrosoftLogin();
     public void microsoftLogout() => window.LogoutMicrosoft();
     public void installVanilla(string name, string version) => window.InstallVanilla(name, version);
@@ -53,6 +57,7 @@ public sealed class LauncherWindow : Form
         core = new LauncherCore(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "IDIOTCORDLauncher"));
         bridge = new LauncherBridge(this);
         Text = "IDIOTCORD LAUNCHER";
+        FormBorderStyle = FormBorderStyle.None;
         Width = 1440;
         Height = 920;
         MinimumSize = new Size(980, 650);
@@ -61,6 +66,26 @@ public sealed class LauncherWindow : Form
         Controls.Add(browser);
         Shown += async (_, _) => await InitializeBrowserAsync();
     }
+
+    public void BeginWindowDrag()
+    {
+        if (WindowState == FormWindowState.Maximized) return;
+        ReleaseCapture();
+        SendMessage(Handle, WindowMessage, CaptionHitTest, 0);
+    }
+
+    public void MinimizeWindow() => WindowState = FormWindowState.Minimized;
+    public void ToggleMaximizeWindow() => WindowState = WindowState == FormWindowState.Maximized ? FormWindowState.Normal : FormWindowState.Maximized;
+    public void CloseWindow() => Close();
+
+    [DllImport("user32.dll")]
+    private static extern bool ReleaseCapture();
+
+    [DllImport("user32.dll")]
+    private static extern nint SendMessage(nint handle, int message, nint wParam, nint lParam);
+
+    private const int WindowMessage = 0xA1;
+    private static readonly nint CaptionHitTest = 2;
 
     private async Task InitializeBrowserAsync()
     {

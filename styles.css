@@ -78,6 +78,11 @@ body.ready .startup-splash { opacity: 0; visibility: hidden; pointer-events: non
 .breadcrumb svg { width: 14px; }
 .breadcrumb strong { color: var(--muted); font-weight: 500; }
 .topbar-actions { display: flex; align-items: center; gap: 14px; }
+.window-controls { display: flex; align-items: center; gap: 3px; margin-left: 5px; padding-left: 8px; border-left: 1px solid var(--line); }
+.window-control { width: 28px; height: 28px; display: grid; place-items: center; border: 1px solid transparent; border-radius: 5px; background: rgba(255,255,255,.035); color: var(--muted); opacity: .78; transition: background .2s, color .2s, opacity .2s; }
+.window-control:hover { opacity: 1; background: rgba(255,255,255,.1); color: var(--ink); }
+.window-control svg { width: 14px; height: 14px; }
+.window-control.close-control:hover { background: rgba(222,93,130,.72); color: white; }
 .search-box { height: 34px; width: 218px; border: 1px solid var(--line); background: #151b17; border-radius: 7px; display: flex; align-items: center; gap: 8px; padding: 0 9px; color: var(--faint); }
 .search-box svg { width: 15px; }
 .search-box input { border: 0; outline: none; width: 100%; color: var(--ink); background: transparent; font-size: 11px; }

@@ -11,6 +11,13 @@ let accountState = { status: 'signed-out', name: '', message: 'Sign in to connec
 const appVersion = '0.1.2';
 let requiredUpdate = false;
 
+document.querySelector('.topbar').addEventListener('mousedown', (event) => {
+  if (!event.target.closest('button, input, a')) nativeCall('beginWindowDrag');
+});
+document.querySelector('#window-minimize').addEventListener('click', () => nativeCall('minimizeWindow'));
+document.querySelector('#window-maximize').addEventListener('click', () => nativeCall('toggleMaximizeWindow'));
+document.querySelector('#window-close').addEventListener('click', () => nativeCall('closeWindow'));
+
 window.addEventListener('load', () => {
   window.setTimeout(() => document.body.classList.add('ready'), 1600);
 });
