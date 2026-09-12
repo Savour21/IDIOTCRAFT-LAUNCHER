@@ -1,7 +1,7 @@
 {
   "version": "0.1.1",
   "updateType": "patch",
-  "downloadUrl": "",
+  "downloadUrl": "https://github.com/Savour21/IDIOTCRAFT-LAUNCHER/releases/latest",
   "notes": [
     "Initial IDIOTCORD LAUNCHER release.",
     "Windows WebView2 desktop host.",
